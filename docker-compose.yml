@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: taskify_db
+    restart: always
+    environment:
+      POSTGRES_USER: bond
+      POSTGRES_PASSWORD: jamesbond007
+      POSTGRES_DB: taskify
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: taskify-backend
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://bond:jamesbond007@db:5432/taskify
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
