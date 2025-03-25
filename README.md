@@ -67,9 +67,9 @@ O projeto está separado em **backend** e **frontend**, cada um rodando em um co
 - Banco de dados (caso queira acessar via **pgAdmin** ou outro cliente SQL):  
   - **Host**: `localhost`
   - **Porta**: `5432`
-  - **Usuário**: `user`
-  - **Senha**: `pass`
-  - **Banco**: `db_name`
+  - **Usuário**: `bond`
+  - **Senha**: `jamesbond007`
+  - **Banco**: `taskify`
 
 ---
 
