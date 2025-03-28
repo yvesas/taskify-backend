@@ -5,10 +5,16 @@ WORKDIR /usr/src/app
 
 COPY package.json pnpm-lock.yaml ./
 COPY prisma ./prisma/
-RUN pnpm install
+RUN pnpm install --frozen-lockfile
+
 COPY . .
-RUN npx prisma generate
-RUN pnpm run build
+
+RUN npx prisma generate && \
+    pnpm run build
+
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 3000
-CMD ["pnpm", "start:prod"]
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
