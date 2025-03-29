@@ -78,7 +78,7 @@ Acesse o projeto completo e suba os container
 
 ---
 
-### **4️⃣ Acessando o projeto**
+### **Acessando o projeto**
 
 - Backend: [`http://localhost:3000`](http://localhost:3000)
 - Banco de dados (caso queira acessar via **pgAdmin** ou outro cliente SQL):
